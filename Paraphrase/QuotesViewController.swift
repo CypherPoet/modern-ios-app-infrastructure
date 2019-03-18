@@ -43,11 +43,18 @@ class QuotesViewController: UITableViewController {
         let decoder = JSONDecoder()
         quotes = try! decoder.decode([Quote].self, from: quoteData)
     }
+}
 
+
+// MARK: - Table View Data Source
+
+extension QuotesViewController {
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return quotes.count
     }
 
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
@@ -60,7 +67,13 @@ class QuotesViewController: UITableViewController {
 
         return cell
     }
+}
 
+
+// MARK: - Table View Delegate
+
+extension QuotesViewController {
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // show the quote fullscreen
         guard let showQuote = storyboard?.instantiateViewController(withIdentifier: "ShowQuoteViewController") as? ShowQuoteViewController else {
@@ -74,57 +87,7 @@ class QuotesViewController: UITableViewController {
         navigationController?.pushViewController(showQuote, animated: true)
     }
 
-    @objc func addQuote() {
-        // add an empty quote and mark it as selected
-        let quote = Quote(author: "", text: "")
-        quotes.append(quote)
-        selectedRow = quotes.count - 1
-
-        // now trigger editing that quote
-        guard let editQuote = storyboard?.instantiateViewController(withIdentifier: "EditQuoteViewController") as? EditQuoteViewController else {
-            SwiftyBeaver.error("Unable to load EditQuoteViewController")
-            fatalError("Unable to load EditQuoteViewController")
-        }
-
-        editQuote.quotesViewController = self
-        editQuote.editingQuote = quote
-        navigationController?.pushViewController(editQuote, animated: true)
-    }
-
-    @objc func showRandomQuote() {
-        guard !quotes.isEmpty else { return }
-        let randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: quotes.count)
-        let selectedQuote = quotes[randomNumber]
-
-        guard let showQuote = storyboard?.instantiateViewController(withIdentifier: "ShowQuoteViewController") as? ShowQuoteViewController else {
-            SwiftyBeaver.error("Unable to load ShowQuoteViewController")
-            fatalError("Unable to load ShowQuoteViewController")
-        }
-
-        showQuote.quote = selectedQuote
-
-        navigationController?.pushViewController(showQuote, animated: true)
-    }
-
-    func finishedEditing(_ quote: Quote) {
-        // make sure we have a selected row
-        guard let selected = selectedRow else { return }
-
-        if quote.author.isEmpty && quote.text.isEmpty {
-            // if no text was entered just delete the quote
-            SwiftyBeaver.info("Removing empty quote")
-            quotes.remove(at: selected)
-        } else {
-            // replace our existing quote with this new one then save
-            SwiftyBeaver.info("Replacing quote at index \(selected)")
-            quotes[selected] = quote
-            self.saveQuotes()
-        }
-
-        tableView.reloadData()
-        selectedRow = nil
-    }
-
+    
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { [unowned self] (action, indexPath) in
             SwiftyBeaver.info("Deleting quote at index \(indexPath.row)")
@@ -151,7 +114,67 @@ class QuotesViewController: UITableViewController {
 
         return [delete, edit]
     }
+}
 
+
+// MARK: - Helper Methods
+
+extension QuotesViewController {
+    
+    @objc func addQuote() {
+        // add an empty quote and mark it as selected
+        let quote = Quote(author: "", text: "")
+        quotes.append(quote)
+        selectedRow = quotes.count - 1
+        
+        // now trigger editing that quote
+        guard let editQuote = storyboard?.instantiateViewController(withIdentifier: "EditQuoteViewController") as? EditQuoteViewController else {
+            SwiftyBeaver.error("Unable to load EditQuoteViewController")
+            fatalError("Unable to load EditQuoteViewController")
+        }
+        
+        editQuote.quotesViewController = self
+        editQuote.editingQuote = quote
+        navigationController?.pushViewController(editQuote, animated: true)
+    }
+    
+    
+    @objc func showRandomQuote() {
+        guard !quotes.isEmpty else { return }
+        let randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: quotes.count)
+        let selectedQuote = quotes[randomNumber]
+        
+        guard let showQuote = storyboard?.instantiateViewController(withIdentifier: "ShowQuoteViewController") as? ShowQuoteViewController else {
+            SwiftyBeaver.error("Unable to load ShowQuoteViewController")
+            fatalError("Unable to load ShowQuoteViewController")
+        }
+        
+        showQuote.quote = selectedQuote
+        
+        navigationController?.pushViewController(showQuote, animated: true)
+    }
+    
+    
+    func finishedEditing(_ quote: Quote) {
+        // make sure we have a selected row
+        guard let selected = selectedRow else { return }
+        
+        if quote.author.isEmpty && quote.text.isEmpty {
+            // if no text was entered just delete the quote
+            SwiftyBeaver.info("Removing empty quote")
+            quotes.remove(at: selected)
+        } else {
+            // replace our existing quote with this new one then save
+            SwiftyBeaver.info("Replacing quote at index \(selected)")
+            quotes[selected] = quote
+            self.saveQuotes()
+        }
+        
+        tableView.reloadData()
+        selectedRow = nil
+    }
+    
+    
     func saveQuotes() {
         let defaults = UserDefaults.standard
         let encoder = JSONEncoder()
