@@ -29,5 +29,19 @@ class ParaphraseTests: XCTestCase {
         
         XCTAssertEqual(actual, expected, "default quotes model does not have \(expected) quotes")
     }
+    
+    func testRandomQuoteSelection() {
+        let model = QuotesModel(isTesting: true)
+        
+        guard let chosenQuote = model.random() else {
+            XCTFail()
+            return
+        }
+        
+        let expected = "Eliot"
+        let actual = chosenQuote.author
+        
+        XCTAssertEqual(actual, expected, "random quote")
+    }
 
 }

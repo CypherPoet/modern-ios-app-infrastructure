@@ -7,12 +7,15 @@
 //
 
 import Foundation
+import GameplayKit
 
 struct QuotesModel {
     private var quotes: [Quote] = []
+    var randomSource: GKRandomSource?
 
     init(isTesting: Bool = false) {
         quotes = loadQuotes(isTesting: isTesting)
+        randomSource = isTesting ? GKMersenneTwisterRandomSource(seed: 1) : GKMersenneTwisterRandomSource()
     }
 }
 
@@ -22,6 +25,20 @@ struct QuotesModel {
 extension QuotesModel {
     var count: Int {
         return quotes.count
+    }
+}
+
+
+// MARK: - Core Methods
+
+extension QuotesModel {
+    
+    func random() -> Quote? {
+        guard !quotes.isEmpty else { return nil }
+        
+        let index = randomSource?.nextInt(upperBound: quotes.count) ?? 0
+        
+        return quotes[index]
     }
 }
 
@@ -48,5 +65,4 @@ private extension QuotesModel {
         let decoder = JSONDecoder()
         return try! decoder.decode([Quote].self, from: quoteData)
     }
-    
 }
