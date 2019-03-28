@@ -26,8 +26,8 @@ class ShowQuoteViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareQuote))
 
         // format the text and author of this quote
-        var textAttributes = [NSAttributedStringKey: Any]()
-        var authorAttributes = [NSAttributedStringKey: Any]()
+        var textAttributes = [NSAttributedString.Key: Any]()
+        var authorAttributes = [NSAttributedString.Key: Any]()
 
         if let quoteFont = UIFont(name: "Georgia", size: 24) {
             let fontMetrics = UIFontMetrics(forTextStyle: .headline)

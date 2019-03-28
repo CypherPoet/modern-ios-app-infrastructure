@@ -335,7 +335,7 @@ open class BaseDestination: Hashable, Equatable {
 
     /// Remove a filter from the list of filters
     public func removeFilter(_ filter: FilterType) {
-        let index = filters.index {
+        let index = filters.firstIndex {
             return ObjectIdentifier($0) == ObjectIdentifier(filter)
         }
 

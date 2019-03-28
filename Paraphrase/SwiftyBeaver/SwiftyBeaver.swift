@@ -25,7 +25,7 @@ open class SwiftyBeaver {
     }
 
     // a set of active destinations
-    open private(set) static var destinations = Set<BaseDestination>()
+    public private(set) static var destinations = Set<BaseDestination>()
 
     // MARK: Destination Handling
 
@@ -86,37 +86,37 @@ open class SwiftyBeaver {
     /// log something generally unimportant (lowest priority)
     open class func verbose(_ message: @autoclosure () -> Any, _
         file: String = #file, _ function: String = #function, line: Int = #line, context: Any? = nil) {
-        custom(level: .verbose, message: message, file: file, function: function, line: line, context: context)
+        custom(level: .verbose, message: message(), file: file, function: function, line: line, context: context)
     }
 
     /// log something which help during debugging (low priority)
     open class func debug(_ message: @autoclosure () -> Any, _
         file: String = #file, _ function: String = #function, line: Int = #line, context: Any? = nil) {
-        custom(level: .debug, message: message, file: file, function: function, line: line, context: context)
+        custom(level: .debug, message: message(), file: file, function: function, line: line, context: context)
     }
 
     /// log something which you are really interested but which is not an issue or error (normal priority)
     open class func info(_ message: @autoclosure () -> Any, _
         file: String = #file, _ function: String = #function, line: Int = #line, context: Any? = nil) {
-        custom(level: .info, message: message, file: file, function: function, line: line, context: context)
+        custom(level: .info, message: message(), file: file, function: function, line: line, context: context)
     }
 
     /// log something which may cause big trouble soon (high priority)
     open class func warning(_ message: @autoclosure () -> Any, _
         file: String = #file, _ function: String = #function, line: Int = #line, context: Any? = nil) {
-        custom(level: .warning, message: message, file: file, function: function, line: line, context: context)
+        custom(level: .warning, message: message(), file: file, function: function, line: line, context: context)
     }
 
     /// log something which will keep you awake at night (highest priority)
     open class func error(_ message: @autoclosure () -> Any, _
         file: String = #file, _ function: String = #function, line: Int = #line, context: Any? = nil) {
-        custom(level: .error, message: message, file: file, function: function, line: line, context: context)
+        custom(level: .error, message: message(), file: file, function: function, line: line, context: context)
     }
 
     /// custom logging to manually adjust values, should just be used by other frameworks
     public class func custom(level: SwiftyBeaver.Level, message: @autoclosure () -> Any,
                              file: String = #file, function: String = #function, line: Int = #line, context: Any? = nil) {
-        dispatch_send(level: level, message: message, thread: threadName(),
+        dispatch_send(level: level, message: message(), thread: threadName(),
                       file: file, function: function, line: line, context: context)
     }
 

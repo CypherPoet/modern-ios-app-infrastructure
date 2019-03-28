@@ -26,7 +26,19 @@
 		51C94E09209DB1CF00298E4F /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C94E08209DB1CF00298E4F /* Quote.swift */; };
 		51C94E0B209DBC9B00298E4F /* ShowQuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C94E0A209DBC9B00298E4F /* ShowQuoteViewController.swift */; };
 		51C94E0D209DE5B800298E4F /* EditQuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C94E0C209DE5B800298E4F /* EditQuoteViewController.swift */; };
+		F3E87DC7223F395800B6BD9F /* ParaphraseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E87DC6223F395800B6BD9F /* ParaphraseTests.swift */; };
+		F3E87DD0223F3DC800B6BD9F /* QuotesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E87DCE223F3DC200B6BD9F /* QuotesModel.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F3E87DC9223F395800B6BD9F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51C94DE9209DACDB00298E4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 51C94DF0209DACDB00298E4F;
+			remoteInfo = Paraphrase;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		513E9CF8209F44D100A0E43A /* BaseDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDestination.swift; sourceTree = "<group>"; };
@@ -50,10 +62,21 @@
 		51C94E08209DB1CF00298E4F /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		51C94E0A209DBC9B00298E4F /* ShowQuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowQuoteViewController.swift; sourceTree = "<group>"; };
 		51C94E0C209DE5B800298E4F /* EditQuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditQuoteViewController.swift; sourceTree = "<group>"; };
+		F3E87DC4223F395800B6BD9F /* ParaphraseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParaphraseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3E87DC6223F395800B6BD9F /* ParaphraseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParaphraseTests.swift; sourceTree = "<group>"; };
+		F3E87DC8223F395800B6BD9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3E87DCE223F3DC200B6BD9F /* QuotesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuotesModel.swift; path = Paraphrase/QuotesModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		51C94DEE209DACDB00298E4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3E87DC1223F395800B6BD9F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -84,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				51C94DF3209DACDB00298E4F /* Paraphrase */,
+				F3E87DC5223F395800B6BD9F /* ParaphraseTests */,
 				51C94DF2209DACDB00298E4F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				51C94DF1209DACDB00298E4F /* Paraphrase.app */,
+				F3E87DC4223F395800B6BD9F /* ParaphraseTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,6 +124,7 @@
 		51C94DF3209DACDB00298E4F /* Paraphrase */ = {
 			isa = PBXGroup;
 			children = (
+				F3E87DCE223F3DC200B6BD9F /* QuotesModel.swift */,
 				513E9CF7209F44C900A0E43A /* SwiftyBeaver */,
 				51C94DF4209DACDB00298E4F /* AppDelegate.swift */,
 				51C94DF6209DACDB00298E4F /* QuotesViewController.swift */,
@@ -112,6 +138,15 @@
 				51C94E08209DB1CF00298E4F /* Quote.swift */,
 			);
 			path = Paraphrase;
+			sourceTree = "<group>";
+		};
+		F3E87DC5223F395800B6BD9F /* ParaphraseTests */ = {
+			isa = PBXGroup;
+			children = (
+				F3E87DC6223F395800B6BD9F /* ParaphraseTests.swift */,
+				F3E87DC8223F395800B6BD9F /* Info.plist */,
+			);
+			path = ParaphraseTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,18 +169,42 @@
 			productReference = 51C94DF1209DACDB00298E4F /* Paraphrase.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F3E87DC3223F395800B6BD9F /* ParaphraseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3E87DCB223F395800B6BD9F /* Build configuration list for PBXNativeTarget "ParaphraseTests" */;
+			buildPhases = (
+				F3E87DC0223F395800B6BD9F /* Sources */,
+				F3E87DC1223F395800B6BD9F /* Frameworks */,
+				F3E87DC2223F395800B6BD9F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F3E87DCA223F395800B6BD9F /* PBXTargetDependency */,
+			);
+			name = ParaphraseTests;
+			productName = ParaphraseTests;
+			productReference = F3E87DC4223F395800B6BD9F /* ParaphraseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		51C94DE9209DACDB00298E4F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Hacking with Swift";
 				TargetAttributes = {
 					51C94DF0209DACDB00298E4F = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1020;
+					};
+					F3E87DC3223F395800B6BD9F = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
+						TestTargetID = 51C94DF0209DACDB00298E4F;
 					};
 				};
 			};
@@ -163,6 +222,7 @@
 			projectRoot = "";
 			targets = (
 				51C94DF0209DACDB00298E4F /* Paraphrase */,
+				F3E87DC3223F395800B6BD9F /* ParaphraseTests */,
 			);
 		};
 /* End PBXProject section */
@@ -176,6 +236,13 @@
 				51C94DFF209DACDC00298E4F /* LaunchScreen.storyboard in Resources */,
 				51C94DFC209DACDC00298E4F /* Assets.xcassets in Resources */,
 				51C94DFA209DACDB00298E4F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3E87DC2223F395800B6BD9F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,11 +267,28 @@
 				513E9D02209F44D100A0E43A /* BaseDestination.swift in Sources */,
 				513E9D05209F44D100A0E43A /* FileDestination.swift in Sources */,
 				513E9D0B209F44D100A0E43A /* Base64.swift in Sources */,
+				F3E87DD0223F3DC800B6BD9F /* QuotesModel.swift in Sources */,
 				513E9D03209F44D100A0E43A /* GoogleCloudDestination.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F3E87DC0223F395800B6BD9F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3E87DC7223F395800B6BD9F /* ParaphraseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F3E87DCA223F395800B6BD9F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 51C94DF0209DACDB00298E4F /* Paraphrase */;
+			targetProxy = F3E87DC9223F395800B6BD9F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		51C94DF8209DACDB00298E4F /* Main.storyboard */ = {
@@ -345,7 +429,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B5C26XE59E;
+				DEVELOPMENT_TEAM = QRXXH2RKAG;
 				INFOPLIST_FILE = Paraphrase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -353,7 +437,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.Paraphrase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -363,7 +447,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B5C26XE59E;
+				DEVELOPMENT_TEAM = QRXXH2RKAG;
 				INFOPLIST_FILE = Paraphrase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -371,8 +455,53 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.Paraphrase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		F3E87DCC223F395800B6BD9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QRXXH2RKAG;
+				INFOPLIST_FILE = ParaphraseTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = io.sipple.ParaphraseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Paraphrase.app/Paraphrase";
+			};
+			name = Debug;
+		};
+		F3E87DCD223F395800B6BD9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QRXXH2RKAG;
+				INFOPLIST_FILE = ParaphraseTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = io.sipple.ParaphraseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Paraphrase.app/Paraphrase";
 			};
 			name = Release;
 		};
@@ -393,6 +522,15 @@
 			buildConfigurations = (
 				51C94E04209DACDC00298E4F /* Debug */,
 				51C94E05209DACDC00298E4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3E87DCB223F395800B6BD9F /* Build configuration list for PBXNativeTarget "ParaphraseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3E87DCC223F395800B6BD9F /* Debug */,
+				F3E87DCD223F395800B6BD9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
