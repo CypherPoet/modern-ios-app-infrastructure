@@ -43,5 +43,38 @@ class ParaphraseTests: XCTestCase {
         
         XCTAssertEqual(actual, expected, "random quote")
     }
+}
 
+
+// MARK - Formatting
+
+extension ParaphraseTests {
+
+    func testMultilineFormatting() {
+        let model = QuotesModel(isTesting: true)
+        let quote = model.quote(at: 0)
+
+        let expected = "\"\(quote.text)\"\n   — \(quote.author)"
+        let actual = quote.multiLine
+        
+        XCTAssertEqual(actual, expected, "multi-line quote text does not have proper formatting.")
+    }
+    
+    func testSingleLineFormatting() {
+        let model = QuotesModel(isTesting: true)
+        let quote = model.quote(at: 0)
+        let formattedText = quote.text.replacingOccurrences(of: "\n", with: " ")
+        
+        let expected = "\(quote.author): \(formattedText)"
+        let actual = quote.singleLine
+        
+        XCTAssertEqual(actual, expected, "single-line quote text does not have proper formatting.")
+    }
+    
+    func testAttributedStringFormatting() {
+        let model = QuotesModel(isTesting: true)
+        let quote = model.quote(at: 0)
+        
+        XCTAssertNotNil(quote.attributedString, "quote does not provide an `attributedString` property")
+    }
 }

@@ -33,6 +33,10 @@ extension QuotesModel {
 
 extension QuotesModel {
     
+    func quote(at index: Int) -> Quote {
+        return quotes[index]
+    }
+    
     func random() -> Quote? {
         guard !quotes.isEmpty else { return nil }
         
