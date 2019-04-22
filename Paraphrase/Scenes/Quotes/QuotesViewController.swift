@@ -161,11 +161,9 @@ extension QuotesViewController {
         
         if quote.author.isEmpty && quote.text.isEmpty {
             // if no text was entered just delete the quote
-            SwiftyBeaver.info("Removing empty quote")
             quotes.remove(at: selected)
         } else {
             // replace our existing quote with this new one then save
-            SwiftyBeaver.info("Replacing quote at index \(selected)")
             quotes[selected] = quote
             self.saveQuotes()
         }

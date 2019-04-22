@@ -65,7 +65,7 @@
 		F3E87DC4223F395800B6BD9F /* ParaphraseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParaphraseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3E87DC6223F395800B6BD9F /* ParaphraseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParaphraseTests.swift; sourceTree = "<group>"; };
 		F3E87DC8223F395800B6BD9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F3E87DCE223F3DC200B6BD9F /* QuotesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuotesModel.swift; path = Paraphrase/QuotesModel.swift; sourceTree = SOURCE_ROOT; };
+		F3E87DCE223F3DC200B6BD9F /* QuotesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuotesModel.swift; path = Paraphrase/ViewModels/QuotesModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,20 +124,76 @@
 		51C94DF3209DACDB00298E4F /* Paraphrase */ = {
 			isa = PBXGroup;
 			children = (
-				F3E87DCE223F3DC200B6BD9F /* QuotesModel.swift */,
+				F328CE27226D7FC1003D4F6F /* Content */,
+				F328CE24226D7F3C003D4F6F /* App Start */,
+				F328CE23226D7F21003D4F6F /* ViewModels */,
+				F328CE22226D7F0F003D4F6F /* Models */,
+				F328CE21226D7F00003D4F6F /* Scenes */,
+				F328CE26226D7FA6003D4F6F /* Supporting Files */,
 				513E9CF7209F44C900A0E43A /* SwiftyBeaver */,
+				51C94E00209DACDC00298E4F /* Info.plist */,
+			);
+			path = Paraphrase;
+			sourceTree = "<group>";
+		};
+		F328CE21226D7F00003D4F6F /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				51C94DF8209DACDB00298E4F /* Main.storyboard */,
+				F328CE25226D7F7A003D4F6F /* Quotes */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F328CE22226D7F0F003D4F6F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				51C94E08209DB1CF00298E4F /* Quote.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F328CE23226D7F21003D4F6F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F3E87DCE223F3DC200B6BD9F /* QuotesModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F328CE24226D7F3C003D4F6F /* App Start */ = {
+			isa = PBXGroup;
+			children = (
 				51C94DF4209DACDB00298E4F /* AppDelegate.swift */,
+				51C94DFD209DACDC00298E4F /* LaunchScreen.storyboard */,
+			);
+			path = "App Start";
+			sourceTree = "<group>";
+		};
+		F328CE25226D7F7A003D4F6F /* Quotes */ = {
+			isa = PBXGroup;
+			children = (
 				51C94DF6209DACDB00298E4F /* QuotesViewController.swift */,
 				51C94E0C209DE5B800298E4F /* EditQuoteViewController.swift */,
 				51C94E0A209DBC9B00298E4F /* ShowQuoteViewController.swift */,
-				51C94DF8209DACDB00298E4F /* Main.storyboard */,
-				51C94DFB209DACDC00298E4F /* Assets.xcassets */,
-				51C94DFD209DACDC00298E4F /* LaunchScreen.storyboard */,
-				51C94E00209DACDC00298E4F /* Info.plist */,
-				51C94E06209DB16100298E4F /* initial-quotes.json */,
-				51C94E08209DB1CF00298E4F /* Quote.swift */,
 			);
-			path = Paraphrase;
+			path = Quotes;
+			sourceTree = "<group>";
+		};
+		F328CE26226D7FA6003D4F6F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				51C94E06209DB16100298E4F /* initial-quotes.json */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F328CE27226D7FC1003D4F6F /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				51C94DFB209DACDC00298E4F /* Assets.xcassets */,
+			);
+			path = Content;
 			sourceTree = "<group>";
 		};
 		F3E87DC5223F395800B6BD9F /* ParaphraseTests */ = {
