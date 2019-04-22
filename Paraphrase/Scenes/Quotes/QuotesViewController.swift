@@ -15,6 +15,12 @@ class QuotesViewController: UITableViewController {
 
     // whichever row was selected; used when adjusting the data source after editing
     var selectedRow : Int?
+}
+
+
+// MARK: - Lifecycle
+
+extension QuotesViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

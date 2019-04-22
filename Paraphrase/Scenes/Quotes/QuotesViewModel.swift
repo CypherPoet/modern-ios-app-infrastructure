@@ -1,5 +1,5 @@
 //
-//  QuotesModel.swift
+//  QuotesViewModel.swift
 //  ParaphraseTests
 //
 //  Created by Brian Sipple on 3/17/19.
@@ -9,7 +9,7 @@
 import Foundation
 import GameplayKit
 
-struct QuotesModel {
+struct QuotesViewModel {
     private var quotes: [Quote] = []
     var randomSource: GKRandomSource?
 
@@ -22,7 +22,7 @@ struct QuotesModel {
 
 // MARK: - Computed Properties
 
-extension QuotesModel {
+extension QuotesViewModel {
     var count: Int {
         return quotes.count
     }
@@ -31,7 +31,7 @@ extension QuotesModel {
 
 // MARK: - Core Methods
 
-extension QuotesModel {
+extension QuotesViewModel {
     
     func quote(at index: Int) -> Quote {
         return quotes[index]
@@ -67,7 +67,7 @@ extension QuotesModel {
 
 // MARK: - Private Helper Methods
 
-private extension QuotesModel {
+private extension QuotesViewModel {
     
     func loadQuotes(isTesting: Bool) -> [Quote] {
         let defaults = UserDefaults.standard

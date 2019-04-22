@@ -29,7 +29,7 @@ class ParaphraseTests: XCTestCase {
 extension ParaphraseTests {
 
     func testLoadingInitialQuotes() {
-        let viewModel = QuotesModel(isTesting: true)
+        let viewModel = QuotesViewModel(isTesting: true)
         
         let expected = 12
         let actual = viewModel.count
@@ -44,7 +44,7 @@ extension ParaphraseTests {
 extension ParaphraseTests {
     
     func testRandomQuoteSelection() {
-        let viewModel = QuotesModel(isTesting: true)
+        let viewModel = QuotesViewModel(isTesting: true)
         
         guard let chosenQuote = viewModel.random() else {
             XCTFail()
@@ -59,7 +59,7 @@ extension ParaphraseTests {
     
     
     func testAddingQuote() {
-        var viewModel = QuotesModel(isTesting: true)
+        var viewModel = QuotesViewModel(isTesting: true)
         let startingQuoteCount = viewModel.count
         
         let newQuote = Quote(author: "Mario", text: "It's me!")
@@ -72,7 +72,7 @@ extension ParaphraseTests {
     
     
     func testRemovingQuote() {
-        var viewModel = QuotesModel(isTesting: true)
+        var viewModel = QuotesViewModel(isTesting: true)
         let startingQuoteCount = viewModel.count
         
         viewModel.remove(at: 0)
@@ -84,7 +84,7 @@ extension ParaphraseTests {
     
     
     func testReplacingQuote() {
-        var viewModel = QuotesModel(isTesting: true)
+        var viewModel = QuotesViewModel(isTesting: true)
         let startingQuoteCount = viewModel.count
         let newQuote = Quote(author: "Mario", text: "It's me!")
 
@@ -105,7 +105,7 @@ extension ParaphraseTests {
 extension ParaphraseTests {
 
     func testMultilineFormatting() {
-        let viewModel = QuotesModel(isTesting: true)
+        let viewModel = QuotesViewModel(isTesting: true)
         let quote = viewModel.quote(at: 0)
 
         let expected = "\"\(quote.text)\"\n   — \(quote.author)"
@@ -115,7 +115,7 @@ extension ParaphraseTests {
     }
     
     func testSingleLineFormatting() {
-        let viewModel = QuotesModel(isTesting: true)
+        let viewModel = QuotesViewModel(isTesting: true)
         let quote = viewModel.quote(at: 0)
         let formattedText = quote.text.replacingOccurrences(of: "\n", with: " ")
         
@@ -126,7 +126,7 @@ extension ParaphraseTests {
     }
     
     func testAttributedStringFormatting() {
-        let viewModel = QuotesModel(isTesting: true)
+        let viewModel = QuotesViewModel(isTesting: true)
         let quote = viewModel.quote(at: 0)
         
         XCTAssertNotNil(quote.attributedString, "quote does not provide an `attributedString` property")
