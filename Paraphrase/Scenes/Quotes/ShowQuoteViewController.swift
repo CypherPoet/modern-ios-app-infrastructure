@@ -12,7 +12,13 @@ class ShowQuoteViewController: UIViewController {
     @IBOutlet var quoteLabel: UILabel!
 
     var quote : Quote?
+}
 
+
+// MARK: - Lifecycle
+
+extension ShowQuoteViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,35 +31,24 @@ class ShowQuoteViewController: UIViewController {
         navigationItem.largeTitleDisplayMode = .never
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareQuote))
 
-        // format the text and author of this quote
-        var textAttributes = [NSAttributedString.Key: Any]()
-        var authorAttributes = [NSAttributedString.Key: Any]()
-
-        if let quoteFont = UIFont(name: "Georgia", size: 24) {
-            let fontMetrics = UIFontMetrics(forTextStyle: .headline)
-            textAttributes[.font] = fontMetrics.scaledFont(for: quoteFont)
-        }
-
-        if let authorFont = UIFont(name: "Georgia-Italic", size: 16) {
-            let fontMetrics = UIFontMetrics(forTextStyle: .body)
-            authorAttributes[.font] = fontMetrics.scaledFont(for: authorFont)
-        }
-
-        let finishedQuote = NSMutableAttributedString(string: quote.text, attributes: textAttributes)
-        let authorString = NSAttributedString(string: "\n\n\(quote.author)", attributes: authorAttributes)
-        finishedQuote.append(authorString)
-
-        quoteLabel.attributedText = finishedQuote
+        quoteLabel.attributedText = quote.attributedString
     }
+}
 
+
+// MARK: - Private Helper Methods
+
+private extension ShowQuoteViewController {
+    
     @objc func shareQuote() {
         guard let quote = quote else {
             return
         }
 
         // format the quote neatly and share it
-        let fullText = "\"\(quote.text)\"\n   — \(quote.author)"
+        let fullText = quote.multiLine
         let activity = UIActivityViewController(activityItems: [fullText], applicationActivities: nil)
+        
         present(activity, animated: true)
 
         SwiftyBeaver.info("Sharing quote \(fullText)")

@@ -10,7 +10,10 @@ import Foundation
 import GameplayKit
 
 struct QuotesViewModel {
-    private var quotes: [Quote] = []
+    private var quotes: [Quote] = [] {
+        didSet { save() }
+    }
+    
     var randomSource: GKRandomSource?
 
     init(isTesting: Bool = false) {
@@ -61,6 +64,16 @@ extension QuotesViewModel {
     mutating func replace(quoteAt index: Int, with replacementQuote: Quote) {
         SwiftyBeaver.info("Replaced quote at index \(index)")
         quotes[index] = replacementQuote
+    }
+    
+    
+    func save() {
+        let defaults = UserDefaults.standard
+        let encoder = JSONEncoder()
+        
+        let data = try! encoder.encode(quotes)
+        defaults.set(data, forKey: "SavedQuotes")
+        SwiftyBeaver.info("Quotes saved")
     }
 }
 
