@@ -37,12 +37,30 @@ extension QuotesModel {
         return quotes[index]
     }
     
+    
     func random() -> Quote? {
         guard !quotes.isEmpty else { return nil }
         
         let index = randomSource?.nextInt(upperBound: quotes.count) ?? 0
         
         return quotes[index]
+    }
+    
+    
+    mutating func add(_ quote: Quote) {
+        quotes.append(quote)
+    }
+    
+
+    mutating func remove(at index: Int) {
+        SwiftyBeaver.info("Removing quote at index \(index)")
+        quotes.remove(at: index)
+    }
+    
+    
+    mutating func replace(quoteAt index: Int, with replacementQuote: Quote) {
+        SwiftyBeaver.info("Replaced quote at index \(index)")
+        quotes[index] = replacementQuote
     }
 }
 
