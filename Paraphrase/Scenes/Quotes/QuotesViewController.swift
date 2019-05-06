@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyBeaver
 
 class QuotesViewController: UITableViewController {
     // all the quotes to be shown in our table

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyBeaver
 
 class ShowQuoteViewController: UIViewController {
     @IBOutlet var quoteLabel: UILabel!

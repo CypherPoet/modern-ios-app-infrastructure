@@ -7,16 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		513E9D02209F44D100A0E43A /* BaseDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513E9CF8209F44D100A0E43A /* BaseDestination.swift */; };
-		513E9D03209F44D100A0E43A /* GoogleCloudDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513E9CF9209F44D100A0E43A /* GoogleCloudDestination.swift */; };
-		513E9D04209F44D100A0E43A /* AES256CBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513E9CFA209F44D100A0E43A /* AES256CBC.swift */; };
-		513E9D05209F44D100A0E43A /* FileDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513E9CFB209F44D100A0E43A /* FileDestination.swift */; };
-		513E9D06209F44D100A0E43A /* SBPlatformDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513E9CFC209F44D100A0E43A /* SBPlatformDestination.swift */; };
-		513E9D07209F44D100A0E43A /* SwiftyBeaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513E9CFD209F44D100A0E43A /* SwiftyBeaver.swift */; };
-		513E9D08209F44D100A0E43A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513E9CFE209F44D100A0E43A /* Extensions.swift */; };
-		513E9D09209F44D100A0E43A /* ConsoleDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513E9CFF209F44D100A0E43A /* ConsoleDestination.swift */; };
-		513E9D0A209F44D100A0E43A /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513E9D00209F44D100A0E43A /* Filter.swift */; };
-		513E9D0B209F44D100A0E43A /* Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513E9D01209F44D100A0E43A /* Base64.swift */; };
 		51C94DF5209DACDB00298E4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C94DF4209DACDB00298E4F /* AppDelegate.swift */; };
 		51C94DF7209DACDB00298E4F /* QuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C94DF6209DACDB00298E4F /* QuotesViewController.swift */; };
 		51C94DFA209DACDB00298E4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51C94DF8209DACDB00298E4F /* Main.storyboard */; };
@@ -46,16 +36,6 @@
 /* Begin PBXFileReference section */
 		19C4136E2375418C00517264 /* Pods_Paraphrase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Paraphrase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C6B7E941301C28D2D1C421C /* Pods-Paraphrase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paraphrase.release.xcconfig"; path = "Target Support Files/Pods-Paraphrase/Pods-Paraphrase.release.xcconfig"; sourceTree = "<group>"; };
-		513E9CF8209F44D100A0E43A /* BaseDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDestination.swift; sourceTree = "<group>"; };
-		513E9CF9209F44D100A0E43A /* GoogleCloudDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleCloudDestination.swift; sourceTree = "<group>"; };
-		513E9CFA209F44D100A0E43A /* AES256CBC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AES256CBC.swift; sourceTree = "<group>"; };
-		513E9CFB209F44D100A0E43A /* FileDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDestination.swift; sourceTree = "<group>"; };
-		513E9CFC209F44D100A0E43A /* SBPlatformDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBPlatformDestination.swift; sourceTree = "<group>"; };
-		513E9CFD209F44D100A0E43A /* SwiftyBeaver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyBeaver.swift; sourceTree = "<group>"; };
-		513E9CFE209F44D100A0E43A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		513E9CFF209F44D100A0E43A /* ConsoleDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleDestination.swift; sourceTree = "<group>"; };
-		513E9D00209F44D100A0E43A /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
-		513E9D01209F44D100A0E43A /* Base64.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base64.swift; sourceTree = "<group>"; };
 		51C94DF1209DACDB00298E4F /* Paraphrase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paraphrase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51C94DF4209DACDB00298E4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51C94DF6209DACDB00298E4F /* QuotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewController.swift; sourceTree = "<group>"; };
@@ -98,30 +78,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		513E9CF7209F44C900A0E43A /* SwiftyBeaver */ = {
-			isa = PBXGroup;
-			children = (
-				513E9CFA209F44D100A0E43A /* AES256CBC.swift */,
-				513E9D01209F44D100A0E43A /* Base64.swift */,
-				513E9CF8209F44D100A0E43A /* BaseDestination.swift */,
-				513E9CFF209F44D100A0E43A /* ConsoleDestination.swift */,
-				513E9CFE209F44D100A0E43A /* Extensions.swift */,
-				513E9CFB209F44D100A0E43A /* FileDestination.swift */,
-				513E9D00209F44D100A0E43A /* Filter.swift */,
-				513E9CF9209F44D100A0E43A /* GoogleCloudDestination.swift */,
-				513E9CFC209F44D100A0E43A /* SBPlatformDestination.swift */,
-				513E9CFD209F44D100A0E43A /* SwiftyBeaver.swift */,
-			);
-			path = SwiftyBeaver;
-			sourceTree = "<group>";
-		};
 		51C94DE8209DACDB00298E4F = {
 			isa = PBXGroup;
 			children = (
 				51C94DF3209DACDB00298E4F /* Paraphrase */,
 				F3E87DC5223F395800B6BD9F /* ParaphraseTests */,
 				51C94DF2209DACDB00298E4F /* Products */,
-				F31748C4227FAC510096F751 /* README.md */,
 				F2F9298DAF4DBC9581A6836B /* Pods */,
 				C518423791A765610058EB70 /* Frameworks */,
 			);
@@ -144,7 +106,6 @@
 				F328CE22226D7F0F003D4F6F /* Models */,
 				F328CE21226D7F00003D4F6F /* Scenes */,
 				F328CE26226D7FA6003D4F6F /* Supporting Files */,
-				513E9CF7209F44C900A0E43A /* SwiftyBeaver */,
 				51C94E00209DACDC00298E4F /* Info.plist */,
 			);
 			path = Paraphrase;
@@ -153,6 +114,7 @@
 		C518423791A765610058EB70 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F31748C4227FAC510096F751 /* README.md */,
 				19C4136E2375418C00517264 /* Pods_Paraphrase.framework */,
 				AE8570615EE65DC9397820B0 /* Pods_ParaphraseTests.framework */,
 			);
@@ -409,22 +371,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				513E9D04209F44D100A0E43A /* AES256CBC.swift in Sources */,
 				51C94DF7209DACDB00298E4F /* QuotesViewController.swift in Sources */,
 				51C94E09209DB1CF00298E4F /* Quote.swift in Sources */,
-				513E9D09209F44D100A0E43A /* ConsoleDestination.swift in Sources */,
 				51C94DF5209DACDB00298E4F /* AppDelegate.swift in Sources */,
-				513E9D07209F44D100A0E43A /* SwiftyBeaver.swift in Sources */,
 				51C94E0B209DBC9B00298E4F /* ShowQuoteViewController.swift in Sources */,
-				513E9D0A209F44D100A0E43A /* Filter.swift in Sources */,
 				51C94E0D209DE5B800298E4F /* EditQuoteViewController.swift in Sources */,
-				513E9D08209F44D100A0E43A /* Extensions.swift in Sources */,
-				513E9D06209F44D100A0E43A /* SBPlatformDestination.swift in Sources */,
-				513E9D02209F44D100A0E43A /* BaseDestination.swift in Sources */,
-				513E9D05209F44D100A0E43A /* FileDestination.swift in Sources */,
-				513E9D0B209F44D100A0E43A /* Base64.swift in Sources */,
 				F3E87DD0223F3DC800B6BD9F /* QuotesViewModel.swift in Sources */,
-				513E9D03209F44D100A0E43A /* GoogleCloudDestination.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
