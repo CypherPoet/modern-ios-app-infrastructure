@@ -12,8 +12,8 @@ class EditQuoteViewController: UITableViewController, UITextViewDelegate {
     @IBOutlet var quoteAuthor: UITextField!
     @IBOutlet var quoteText: UITextView!
 
-    var quotesViewController : QuotesViewController?
-    var editingQuote : Quote?
+    var quotesViewController: QuotesViewController?
+    var editingQuote: Quote?
 
     override func viewDidLoad() {
         super.viewDidLoad()

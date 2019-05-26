@@ -8,6 +8,7 @@ target 'Paraphrase' do
   # Pods for Paraphrase
 
   pod 'SwiftyBeaver'
+  pod 'SwiftLint'
 
 
   target 'ParaphraseTests' do

@@ -14,7 +14,7 @@ class QuotesViewController: UITableViewController {
     var viewModel: QuotesViewModel!
 
     // whichever row was selected; used when adjusting the data source after editing
-    var selectedRow : Int?
+    var selectedRow: Int?
 }
 
 
@@ -93,16 +93,21 @@ extension QuotesViewController {
     }
 
     
-    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { [weak self] (action, indexPath) in
+    override func tableView(
+        _ tableView: UITableView,
+        editActionsForRowAt indexPath: IndexPath
+    ) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { [weak self] (_, indexPath) in
             self?.viewModel.remove(at: indexPath.row)
             self?.tableView.deleteRows(at: [indexPath], with: .automatic)
         }
 
-        let edit = UITableViewRowAction(style: .normal, title: "Edit") { [weak self] (action, indexPath) in
+        let edit = UITableViewRowAction(style: .normal, title: "Edit") { [weak self] (_, indexPath) in
             guard let self = self else { return }
             
-            guard let editQuoteVC = self.storyboard?.instantiateViewController(withIdentifier: "EditQuoteViewController") as? EditQuoteViewController else {
+            guard let editQuoteVC = self.storyboard?
+                .instantiateViewController(withIdentifier: "EditQuoteViewController") as? EditQuoteViewController
+            else {
                 SwiftyBeaver.error("Unable to load EditQuoteViewController")
                 fatalError("Unable to load EditQuoteViewController")
             }
@@ -135,7 +140,9 @@ private extension QuotesViewController {
         selectedRow = viewModel.count - 1
         
         // now trigger editing that quote
-        guard let editQuoteVC = storyboard?.instantiateViewController(withIdentifier: "EditQuoteViewController") as? EditQuoteViewController else {
+        guard let editQuoteVC = storyboard?
+            .instantiateViewController(withIdentifier: "EditQuoteViewController") as? EditQuoteViewController
+        else {
             SwiftyBeaver.error("Unable to load EditQuoteViewController")
             fatalError("Unable to load EditQuoteViewController")
         }
@@ -149,7 +156,9 @@ private extension QuotesViewController {
     @objc func showRandomQuote() {
         guard let selectedQuote = viewModel.random() else { return }
         
-        guard let showQuoteVC = storyboard?.instantiateViewController(withIdentifier: "ShowQuoteViewController") as? ShowQuoteViewController else {
+        guard let showQuoteVC = storyboard?
+            .instantiateViewController(withIdentifier: "ShowQuoteViewController") as? ShowQuoteViewController
+        else {
             SwiftyBeaver.error("Unable to load ShowQuoteViewController")
             fatalError("Unable to load ShowQuoteViewController")
         }
@@ -164,8 +173,17 @@ private extension QuotesViewController {
         title = "Paraphrase"
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addQuote))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Random", style: .plain, target: self, action: #selector(showRandomQuote))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(addQuote)
+        )
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: "Random",
+            style: .plain,
+            target: self,
+            action: #selector(showRandomQuote)
+        )
     }
 }
-

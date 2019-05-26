@@ -72,9 +72,13 @@ extension QuotesViewModel {
         let defaults = UserDefaults.standard
         let encoder = JSONEncoder()
         
-        let data = try! encoder.encode(quotes)
-        defaults.set(data, forKey: "SavedQuotes")
-        SwiftyBeaver.info("Quotes saved")
+        do {
+            let data = try encoder.encode(quotes)
+            defaults.set(data, forKey: "SavedQuotes")
+            SwiftyBeaver.info("Quotes saved")
+        } catch {
+            SwiftyBeaver.error("Failed to save quotes: \(error)")
+        }
     }
 }
 
@@ -85,20 +89,18 @@ private extension QuotesViewModel {
     
     func loadQuotes(isTesting: Bool) -> [Quote] {
         let defaults = UserDefaults.standard
-        let quoteData : Data
+        let quoteData: Data
         
         if !isTesting, let savedQuotes = defaults.data(forKey: "SavedQuotes") {
-            // we have saved quotes; use them
-            SwiftyBeaver.info("Loading saved quotes")
+            SwiftyBeaver.info("Loaded saved quotes")
             quoteData = savedQuotes
         } else {
-            // no saved quotes; load the default initial quotes
-            SwiftyBeaver.info("No saved quotes")
+            SwiftyBeaver.info("No saved quotes. Loading the default initial quotes")
             let path = Bundle.main.url(forResource: "initial-quotes", withExtension: "json")!
-            quoteData = try! Data(contentsOf: path)
+            quoteData = (try? Data(contentsOf: path)) ?? Data()
         }
         
         let decoder = JSONDecoder()
-        return try! decoder.decode([Quote].self, from: quoteData)
+        return (try? decoder.decode([Quote].self, from: quoteData)) ?? [Quote]()
     }
 }

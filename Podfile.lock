@@ -1,16 +1,20 @@
 PODS:
+  - SwiftLint (0.32.0)
   - SwiftyBeaver (1.7.0)
 
 DEPENDENCIES:
+  - SwiftLint
   - SwiftyBeaver
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - SwiftLint
     - SwiftyBeaver
 
 SPEC CHECKSUMS:
+  SwiftLint: 009a898ef2a1c851f45e1b59349bf6ff2ddc990d
   SwiftyBeaver: 4cc0080d2e23f980652e28978db11a5c9da39165
 
-PODFILE CHECKSUM: c1b27af4b6961c2ff3348e822edbd9d8088ebd90
+PODFILE CHECKSUM: ab622dd67b9f66d361dc31cd9dcc83f4b86cd3b6
 
 COCOAPODS: 1.6.1

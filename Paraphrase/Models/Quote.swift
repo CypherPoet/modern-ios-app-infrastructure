@@ -12,7 +12,7 @@ struct Quote: Codable, Comparable {
     var author: String
     var text: String
 
-    static func <(lhs: Quote, rhs: Quote) -> Bool {
+    static func < (lhs: Quote, rhs: Quote) -> Bool {
         return lhs.author < rhs.author
     }
 }
