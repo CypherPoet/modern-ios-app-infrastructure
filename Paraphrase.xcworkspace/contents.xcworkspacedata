@@ -10,4 +10,118 @@
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
+   <Group
+      location = "group:fastlane"
+      name = "fastlane">
+      <FileRef
+         location = "group:Fastfile.swift">
+      </FileRef>
+      <FileRef
+         location = "group:Snapfile.swift">
+      </FileRef>
+      <Group
+         location = "group:swift"
+         name = "swift">
+         <FileRef
+            location = "group:LaneFileProtocol.swift">
+         </FileRef>
+         <FileRef
+            location = "group:RubyCommand.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Fastlane.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Fastfile.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ControlCommand.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ScanfileProtocol.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Snapshotfile.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Runner.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ScreengrabfileProtocol.swift">
+         </FileRef>
+         <FileRef
+            location = "group:RubyCommandable.swift">
+         </FileRef>
+         <FileRef
+            location = "group:GymfileProtocol.swift">
+         </FileRef>
+         <FileRef
+            location = "group:SocketResponse.swift">
+         </FileRef>
+         <FileRef
+            location = "group:SnapshotfileProtocol.swift">
+         </FileRef>
+         <FileRef
+            location = "group:ArgumentProcessor.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Scanfile.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Gymfile.swift">
+         </FileRef>
+         <FileRef
+            location = "group:DeliverfileProtocol.swift">
+         </FileRef>
+         <FileRef
+            location = "group:PrecheckfileProtocol.swift">
+         </FileRef>
+         <FileRef
+            location = "group:SocketClientDelegateProtocol.swift">
+         </FileRef>
+         <FileRef
+            location = "group:upgrade_manifest.json">
+         </FileRef>
+         <FileRef
+            location = "group:RunnerArgument.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Precheckfile.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Appfile.swift">
+         </FileRef>
+         <FileRef
+            location = "group:main.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Deliverfile.swift">
+         </FileRef>
+         <FileRef
+            location = "group:MatchfileProtocol.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Screengrabfile.swift">
+         </FileRef>
+         <FileRef
+            location = "group:Matchfile.swift">
+         </FileRef>
+         <Group
+            location = "group:FastlaneSwiftRunner"
+            name = "FastlaneSwiftRunner">
+            <FileRef
+               location = "group:FastlaneSwiftRunner.xcodeproj">
+            </FileRef>
+            <FileRef
+               location = "group:README.txt">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:SocketClient.swift">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:Appfile.swift">
+      </FileRef>
+   </Group>
 </Workspace>
